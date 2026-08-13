@@ -1,13 +1,9 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications - Jonathan Kalala</title>
-    <link rel="stylesheet" href="{% static 'app/style.css' %}">
-</head>
-<body>
+{% extends 'app/base.html' %}
+
+{% block title %}Certifications - Jonathan Kalala{% endblock %}
+
+{% block content %}
 <div class="container">
     <div class="prompt">
         <span class="prompt-user">kalala@sysadmin</span><span class="prompt-symbol">:$</span>
@@ -61,6 +57,6 @@
             <span>Retour à l'accueil</span>
         </a>
     </div>
+
 </div>
-</body>
-</html>
+{% endblock %}

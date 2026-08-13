@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jonathan Kalala{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <!-- Protocole Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-joe-kalala-ciala.onrender.com/">
+    <meta property="og:title" content="Mon Super Site Django">
+    <meta property="og:description" content="Découvrez notre plateforme incroyable développée avec Python et Django.">
+    <!-- L'image d'aperçu (Il est recommandé d'utiliser une URL absolue) -->
+    <meta property="og:image" content="https://portfolio-joe-kalala-ciala.onrender.com{% static 'app/images/aperçu-site.jpg' %}">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://portfolio-joe-kalala-ciala.onrender.com/">
+    <meta name="twitter:title" content="Mon Super Site Django">
+    <meta name="twitter:description" content="Découvrez notre plateforme incroyable développée avec Python et Django.">
+    <meta name="twitter:image" content="https://portfolio-joe-kalala-ciala.onrender.com{% static 'app/images/aperçu-site.jpg' %}">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+{% block content %}{% endblock %}
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-title">contact://network</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://wa.me/243823874247" target="_blank" rel="noreferrer">whatsapp</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/jonathan-kalala-ciala/" target="_blank" rel="noreferrer">linkedin</a>
+            <a class="footer-link" href="https://github.com/joekal" target="_blank" rel="noreferrer">github</a>
+            <a class="footer-link" href="https://medium.com/@kalalajonathan297" target="_blank" rel="noreferrer">medium</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
