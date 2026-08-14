@@ -5,9 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Jonathan Kalala{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'app/images/ico.ico' %}">
     <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <!-- Protocole Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-joe-kalala-ciala.onrender.com/">
+    <meta property="og:title" content="portfolio-joe-kalala-ciala">
+    <meta property="og:description" content="Découvrez notre plateforme incroyable développée avec Python et Django.">
+    <!-- L'image d'aperçu (Il est recommandé d'utiliser une URL absolue) -->
+    <meta property="og:image" content="https://portfolio-joe-kalala-ciala.onrender.com{% static 'app/images/aperçu-site.jpg' %}">
 
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://portfolio-joe-kalala-ciala.onrender.com/">
+    <meta name="twitter:title" content="portfolio-joe-kalala-ciala">
+    <meta name="twitter:description" content="Découvrez notre plateforme incroyable développée avec Python et Django.">
+    <meta name="twitter:image" content="https://portfolio-joe-kalala-ciala.onrender.com{% static 'app/images/aperçu-site.jpg' %}">
 
     {% block extra_head %}{% endblock %}
 </head>
