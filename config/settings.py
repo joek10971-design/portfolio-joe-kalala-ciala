@@ -27,12 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w3ixrp8*yymd02tuf^+obm#mr914yw13z)y*k-1$i0)1=#wps_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 env = environ.Env(
     # Définir des valeurs par défaut si nécessaire (optionnel)
     DEBUG=(bool, False)
 )
+# Lire le fichier .env (s'il existe) et exposer les variables d'environnement
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# DEBUG peut maintenant être configuré via la variable d'environnement DEBUG
+DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,8 +85,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
+    }
+else:
+    # Default to a local sqlite database for development/testing
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
 
 # Password validation
